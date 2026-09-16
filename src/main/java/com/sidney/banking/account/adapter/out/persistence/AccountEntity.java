@@ -3,6 +3,7 @@ package com.sidney.banking.account.adapter.out.persistence;
 import java.math.BigDecimal;
 import java.util.UUID;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -11,12 +12,15 @@ import jakarta.persistence.Table;
 @Table(name = "accounts")
 public class AccountEntity {
 
-    @Id
-    private UUID id;
+	@Id
+	@Column(name = "id", nullable = false)
+	private UUID id;
 
-    private UUID customerId;
+	@Column(name = "customer_id", nullable = false)
+	private UUID customerId;
 
-    private BigDecimal balance;
+	@Column(name = "balance", nullable = false, precision = 19, scale = 2)
+	private BigDecimal balance;
 
     protected AccountEntity() {
     }
