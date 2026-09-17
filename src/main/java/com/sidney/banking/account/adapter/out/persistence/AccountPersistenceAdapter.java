@@ -1,8 +1,11 @@
 package com.sidney.banking.account.adapter.out.persistence;
 
+import org.springframework.stereotype.Repository;
+
 import com.sidney.banking.account.application.port.out.AccountRepositoryPort;
 import com.sidney.banking.account.domain.Account;
 
+@Repository
 public class AccountPersistenceAdapter implements AccountRepositoryPort {
 
     private final SpringDataAccountRepository repository;
