@@ -17,7 +17,7 @@ jobs:
       postgres:
         image: postgres:16-alpine
         env:
-          POSTGRES_DB: account_db
+          POSTGRES_DB: account_hexagonal_db
           POSTGRES_USER: banking
           POSTGRES_PASSWORD: banking
         ports:
