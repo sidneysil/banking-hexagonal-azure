@@ -26,7 +26,18 @@ public class AzureServiceBusAccountEventPublisher
         serviceBusTemplate.sendAsync(
                 QUEUE_NAME,
                 MessageBuilder.withPayload(account).build()
-
-        );
+        )
+        .doOnSuccess(result ->
+            System.out.println(
+                "SERVICE BUS OK: evento enviado para " + QUEUE_NAME
+            )
+        )
+        .doOnError(error -> {
+            System.err.println(
+                "ERRO SERVICE BUS: " + error.getMessage()
+            );
+            error.printStackTrace();
+        })
+        .subscribe();
     }
 }
