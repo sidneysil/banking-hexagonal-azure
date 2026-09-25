@@ -3,8 +3,11 @@ package com.sidney.banking.account.adapter.in.messaging;
 import org.springframework.stereotype.Component;
 
 import com.azure.spring.messaging.servicebus.implementation.core.annotation.ServiceBusListener;
+import org.springframework.context.annotation.Profile;
+
 
 @Component
+@Profile("!oracle")
 public class AccountEventConsumer {
 
     @ServiceBusListener(destination = "account-events")

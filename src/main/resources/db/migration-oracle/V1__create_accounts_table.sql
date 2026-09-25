@@ -1,0 +1,5 @@
+CREATE TABLE accounts (
+    id VARCHAR2(36) PRIMARY KEY,
+    customer_id VARCHAR2(36) NOT NULL,
+    balance NUMBER(19,2) DEFAULT 0.00 NOT NULL
+);
